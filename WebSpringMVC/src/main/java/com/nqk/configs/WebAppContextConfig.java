@@ -4,9 +4,11 @@
  */
 package com.nqk.configs;
 
+import java.text.SimpleDateFormat;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -19,8 +21,13 @@ import org.springframework.web.servlet.view.JstlView;
  */
 @Configuration
 @EnableWebMvc
+@EnableTransactionManagement
 //Cau hinh controller cho context nhan biet
-@ComponentScan(basePackages = "com.nqk.controllers")
+@ComponentScan(basePackages ={
+     "com.nqk.controllers",
+    "com.nqk.repository",
+    "com.nqk.service"
+})
 public class WebAppContextConfig implements WebMvcConfigurer {
         
   @Override
@@ -32,8 +39,13 @@ public class WebAppContextConfig implements WebMvcConfigurer {
     public InternalResourceViewResolver internalResourceViewResolver(){
         InternalResourceViewResolver resolver = new InternalResourceViewResolver();
         resolver.setViewClass(JstlView.class);
-        resolver.setPrefix("/WEB-INF/page/");
+        resolver.setPrefix("/WEB-INF/pages/");
         resolver.setSuffix(".jsp");
       return resolver;
+    }
+    
+    @Bean
+    public SimpleDateFormat simpleDateFormat(){
+        return new SimpleDateFormat("yyyy-MM-dd");
     }
 }

@@ -10,11 +10,14 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
  *
  * @author Kiet
  */
+//Lớp này quy định những cấu hình(config) có thể vượt qua
 public class DispatcherServletInit extends AbstractAnnotationConfigDispatcherServletInitializer{
 
     @Override
     protected Class<?>[] getRootConfigClasses() {
-        return null;
+        return new Class[]{
+            HibernateConfig.class
+        };
     }
 
     @Override
