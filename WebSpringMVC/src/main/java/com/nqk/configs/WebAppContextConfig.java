@@ -44,8 +44,8 @@ public class WebAppContextConfig implements WebMvcConfigurer {
       return resolver;
     }
     
-    @Bean
-    public SimpleDateFormat simpleDateFormat(){
-        return new SimpleDateFormat("yyyy-MM-dd");
-    }
+//    @Bean
+//    public SimpleDateFormat simpleDateFormat(){
+//        return new SimpleDateFormat("yyyy-MM-dd");
+//    }
 }

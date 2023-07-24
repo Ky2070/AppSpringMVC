@@ -2,17 +2,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
  */
-package com.nqk.repository;
+package com.nqk.service;
 
-import com.nqk.pojo.Product;
+import com.nqk.pojo.Category;
 import java.util.List;
-import java.util.Map;
 
 /**
  *
  * @author Kiet
  */
-public interface ProductRepository {
-     List<Product> getProducts(Map<String, String> params);
-   
+public interface CategoryService {
+    List<Category> getCates();
 }

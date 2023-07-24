@@ -4,15 +4,13 @@
  */
 package com.nqk.repository;
 
-import com.nqk.pojo.Product;
+import com.nqk.pojo.Category;
 import java.util.List;
-import java.util.Map;
 
 /**
  *
  * @author Kiet
  */
-public interface ProductRepository {
-     List<Product> getProducts(Map<String, String> params);
-   
+public interface CategoryRepository {
+    List<Category> getCates();
 }
